@@ -4,6 +4,7 @@ public class Main {
     public static double calculateParkingFee(String vehicleType, double hours, boolean isMember) {
         // Định nghĩa giá theo từng loại xe
         double rate;
+        double baseFee;
         if (vehicleType.equals("Xe máy")) {
             rate = 4000;
         } else if (vehicleType.equals("Ô tô")) {
@@ -16,8 +17,6 @@ public class Main {
         if (hours <= 0 || hours > 24) {
             throw new IllegalArgumentException(INVALID_INPUT);
         }
-
-        double baseFee;
         if (hours <= 6) {
             baseFee = rate * hours;
         } else if (hours <= 12) {
